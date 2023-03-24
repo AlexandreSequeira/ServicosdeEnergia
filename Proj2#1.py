@@ -18,6 +18,7 @@ import numpy as np
 #Define CSS style
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
+
 #Load data
 df = pd.read_csv('test_data_2019.csv')
 df['Date'] = pd.to_datetime (df['Date']) # create a new column 'data time' of datetime type
@@ -150,6 +151,7 @@ def generate_table(dataframe, max_rows=10):
 
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server=app.server
 
 app.layout = html.Div([
     html.H2('IST Energy Forecast tool (kWh)'),
